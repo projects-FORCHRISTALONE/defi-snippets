@@ -1,66 +1,16 @@
-## Foundry
+# Micro DeFi Projects
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A repository of micro DeFi projects undertaken to explore smart contract interactions.
 
-Foundry consists of:
+## Project Structure
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Visit the [test folder](./test/) which is organized per protocol. For instance, you can explore the [Uniswap v3 interactions](./test/uniswap-v3/).
 
-## Documentation
+*   [./test/uniswap-v3/](./test/uniswap-v3/) — Liquidity provisioning and swaps.
+*   [./test/aave-v3/](./test/aave-v3/) — Flash loans and supply/borrow tests.
+*   [./test/curve/](./test/curve/) — Stablecoin swapping and gauge staking.
 
-https://book.getfoundry.sh/
+## Getting Started
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+1. Make sure you have foundry installed and install dependencies: `forge build`
+2. Run specific protocol tests: `forge test --fork-url $RPC_URL --mt test_FunctionName -vvvvv`
